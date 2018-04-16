@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Johnson的博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://johnson-hd.github.io/"/>
+  <updated>2018-04-14T02:47:40.000Z</updated>
+  <id>https://johnson-hd.github.io/</id>
+  
+  <author>
+    <name>Johnson</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于我</title>
+    <link href="https://johnson-hd.github.io/2018/04/13/%E5%85%B3%E4%BA%8E%E6%88%91/"/>
+    <id>https://johnson-hd.github.io/2018/04/13/关于我/</id>
+    <published>2018-04-13T14:16:25.000Z</published>
+    <updated>2018-04-14T02:47:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>来自山东烟台，现居上海<br>从事web前端开发<br>Github: <a href="https://github.com/Johnson-hd/" target="_blank" rel="noopener">https://github.com/Johnson-hd/</a><br>QQ: 438513778</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;来自山东烟台，现居上海&lt;br&gt;从事web前端开发&lt;br&gt;Github: &lt;a href=&quot;https://github.com/Johnson-hd/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/Johnson-hd
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>typescript和vue的集成</title>
+    <link href="https://johnson-hd.github.io/2018/04/13/typescript/"/>
+    <id>https://johnson-hd.github.io/2018/04/13/typescript/</id>
+    <published>2018-04-13T14:09:48.000Z</published>
+    <updated>2018-04-13T14:14:38.386Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="创建vue项目"><a href="#创建vue项目" class="headerlink" title="创建vue项目"></a>创建vue项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ vue init webpack <span class="string">"vue-typescript-master"</span></span><br><span class="line">$ <span class="built_in">cd</span> vue-typescript-master</span><br><span class="line">$ yarn install</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;创建vue项目&quot;&gt;&lt;a href=&quot;#创建vue项目&quot; class=&quot;headerlink&quot; title=&quot;创建vue项目&quot;&gt;&lt;/a&gt;创建vue项目&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
