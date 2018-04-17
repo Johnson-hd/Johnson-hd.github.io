@@ -244,6 +244,132 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://johnson-hd.github.io/2018/04/16/ssr/ssr初探/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Johnson">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Johnson的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/16/ssr/ssr初探/" itemprop="url">ssr初探</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T20:20:21+08:00">
+                2018-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是ssr"><a href="#什么是ssr" class="headerlink" title="什么是ssr"></a>什么是ssr</h2><p>ssr是服务端渲染。现在的spa应用，大多是定义一个根元素 <code>div</code>，然后动态加载js后，组装我们的 <code>div</code>，但这样会遇到几个问题：</p>
+<ul>
+<li>无法SEO，只有根元素 <code>div</code>，爬虫无法爬到</li>
+<li>首屏白屏，js加载完成后才会渲染出页面。</li>
+</ul>
+<p>而ssr就是为了解决这些问题，将首屏需要的数据一次性吐出来，即利于seo，又加速首屏渲染。</p>
+<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p><a href="https://github.com/Johnson-hd/vue-ssr-master" target="_blank" rel="noopener">vue-ssr-master</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://johnson-hd.github.io/2018/04/13/vue/typescript/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -315,7 +441,8 @@
       
         
           
-            <h2 id="创建vue项目"><a href="#创建vue项目" class="headerlink" title="创建vue项目"></a>创建vue项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ vue init webpack <span class="string">"vue-typescript-master"</span></span><br><span class="line">$ <span class="built_in">cd</span> vue-typescript-master</span><br><span class="line">$ yarn install</span><br></pre></td></tr></table></figure>
+            <h2 id="写在前面的话"><a href="#写在前面的话" class="headerlink" title="写在前面的话"></a>写在前面的话</h2><p><code>vue-cli</code> 今后会支持 <code>Typescript</code>，未支持之前，可以用下面的方法集成</p>
+<h2 id="创建vue项目"><a href="#创建vue项目" class="headerlink" title="创建vue项目"></a>创建vue项目</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ vue init webpack <span class="string">"vue-typescript-master"</span></span><br><span class="line">$ <span class="built_in">cd</span> vue-typescript-master</span><br><span class="line">$ yarn install</span><br></pre></td></tr></table></figure>
 <h2 id="修改文件后缀"><a href="#修改文件后缀" class="headerlink" title="修改文件后缀"></a>修改文件后缀</h2><p><code>src/main.js</code> =&gt; <code>src/main.ts</code><br><code>src/router/index.js</code> =&gt; <code>src/router/index.ts</code></p>
 <h2 id="增加typescript依赖包"><a href="#增加typescript依赖包" class="headerlink" title="增加typescript依赖包"></a>增加typescript依赖包</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ yarn add typescript ts-loader --dev</span><br></pre></td></tr></table></figure>
 <h2 id="webpack配置"><a href="#webpack配置" class="headerlink" title="webpack配置"></a>webpack配置</h2><p>找到 <code>build/webpack.base.conf.js</code><br>修改 <code>entry</code> 为 <code>./src/main.ts</code><br><code>resolve/extensions</code> 增加一项 <code>.ts</code><br><code>rules</code> 增加一项</p>
@@ -329,6 +456,7 @@
 <h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><p>执行 <code>npm run start</code> ，可能会报错 <code>Cannot read property &#39;afterCompile&#39; of undefined</code> ，可以看一下<code>https://github.com/TypeStrong/ts-loader/issues/729</code> ，其中一个回答是 <code>Maybe install ts-loader 3.5.0 if you&#39;re not using webpack 4?</code> ，由于默认安装的webpack版本不是4，所以我们需要修改ts-loader的版本</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add ts-loader@3.5 --dev</span><br></pre></td></tr></table></figure>
 <p>此时再执行 <code>npm run start</code> 应该就会正常，或者是正常的typescript语法报错</p>
+<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p><a href="https://github.com/Johnson-hd/vue-typescript-master" target="_blank" rel="noopener">vue-typescript-master</a></p>
 
           
         
@@ -410,7 +538,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
