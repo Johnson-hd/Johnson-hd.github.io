@@ -263,7 +263,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/04/16/ssr/ssr初探/" itemprop="url">ssr初探</a></h1>
+                <a class="post-title-link" href="/2018/04/16/ssr/ssr初探/" itemprop="url">SSR初探</a></h1>
         
 
         <div class="post-meta">
@@ -315,12 +315,31 @@
       
         
           
-            <h2 id="什么是ssr"><a href="#什么是ssr" class="headerlink" title="什么是ssr"></a>什么是ssr</h2><p>ssr是服务端渲染。现在的spa应用，大多是定义一个根元素 <code>div</code>，然后动态加载js后，组装我们的 <code>div</code>，但这样会遇到几个问题：</p>
+            <h2 id="什么是SSR"><a href="#什么是SSR" class="headerlink" title="什么是SSR"></a>什么是SSR</h2><p>SSR是服务端渲染。现在的SPA应用，大多是定义一个根元素，然后动态加载js后，组装根元素，但这样会遇到几个问题：</p>
 <ul>
-<li>无法SEO，只有根元素 <code>div</code>，爬虫无法爬到</li>
+<li>无法SEO，根元素内容为空，爬虫无法爬到内容</li>
 <li>首屏白屏，js加载完成后才会渲染出页面。</li>
 </ul>
-<p>而ssr就是为了解决这些问题，将首屏需要的数据一次性吐出来，即利于seo，又加速首屏渲染。</p>
+<p>而SSR就是为了解决这些问题，将首屏需要的页面结构和数据一起吐给浏览器，即利于SEO，又加速首屏渲染。</p>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── LICENSE</span><br><span class="line">├── README.md</span><br><span class="line">├── build</span><br><span class="line">│   ├── webpack.client.js --------------------------- client打包脚本</span><br><span class="line">│   └── webpack.server.js --------------------------- server打包脚本</span><br><span class="line">├── dist</span><br><span class="line">│   ├── bundle.client.js ---------------------------- client打包后脚本</span><br><span class="line">│   └── bundle.server.js ---------------------------- server打包后脚本</span><br><span class="line">├── package.json</span><br><span class="line">├── server.js --------------------------------------- server代码</span><br><span class="line">├── src --------------------------------------------- 前端代码</span><br><span class="line">│   ├── App.vue ------------------------------------- 首页</span><br><span class="line">│   ├── app.js -------------------------------------- 生成vue实例</span><br><span class="line">│   ├── entry-client.js ----------------------------- client打包入口</span><br><span class="line">│   ├── entry-server.js ----------------------------- server打包入口</span><br><span class="line">│   ├── router -------------------------------------- 路由</span><br><span class="line">│   │   └── index.js</span><br><span class="line">│   ├── store --------------------------------------- vuex</span><br><span class="line">│   │   └── index.js</span><br><span class="line">│   └── views --------------------------------------- 页面</span><br><span class="line">│       ├── about.vue</span><br><span class="line">│       ├── blog.vue</span><br><span class="line">│       └── home.vue</span><br><span class="line">│       └── user.vue</span><br><span class="line">└── yarn.lock</span><br></pre></td></tr></table></figure>
+<h2 id="思路整理"><a href="#思路整理" class="headerlink" title="思路整理"></a>思路整理</h2><ol>
+<li>client打包，假设打包后的文件为 <code>bundle.client.js</code></li>
+<li>server打包，假设打包后的文件为 <code>bundle.server.js</code></li>
+<li>server启动，假设为 <code>http://localhost:8080/</code></li>
+<li>请求页面，假设为 <code>http://localhost:8080/home</code></li>
+<li>server拿到请求url为 <code>/home</code></li>
+<li>server根据 <code>/home</code> 解析出其页面结构和页面所需要的数据，待数据拉取成功后，页面结构放入 <code>&lt;html&gt;&lt;/html&gt;</code> 中，数据放入哪里待会说，同时将 <code>bundle.client.js</code> 放入 <code>script</code> 标签，一并吐给浏览器。这里有一个问题，到了浏览器，store的数据怎么更新？在server拿到了数据以后，怎么传给浏览器？这里其实通过 <code>&lt;script&gt;window.__INITIAL_STATE__ = ${data}&lt;/script&gt;</code> 在window对象上挂载一个属性，存储页面所需要的数据，client只需要判断该属性是否存在，如果存在，替换即可，具体写法是 <code>window.__INITIAL_STATE__ &amp;&amp; store.replaceState(window.__INITIAL_STATE__)</code></li>
+<li>此时，浏览器首屏已经生成，在跳转其他路由页面就需要用到我们之前吐给浏览器的 <code>bundle.client.js</code> 了，跟正常的SPA应用一样，页面的路由跳转不再会走server，也就意味着不会再有SSR了</li>
+</ol>
+<h2 id="文件说明"><a href="#文件说明" class="headerlink" title="文件说明"></a>文件说明</h2><ul>
+<li><code>app.js</code> 用来获取vue实例，方便client和server的使用，那么server为何需要它呢？因为server需要首屏吐出页面结构，当然需要解析vue实例</li>
+<li><code>entry-client.js</code> 是client的打包入口，运行在浏览器环境的，所以它跟我们普通的vue项目的打包入口文件是一样的，只是多了一步替换store的动作，上面的 <code>思路整理-6</code> 已经说明了原因</li>
+<li><code>entry-server.js</code> 是server的打包入口，运行在node环境的，所以它就需要两个东西：页面结构和数据，即找到当前url对应的路由组件，并获取数据，最后将数据传入 <code>window.__INITIAL_STATE__</code></li>
+</ul>
+<h2 id="写在后面的话"><a href="#写在后面的话" class="headerlink" title="写在后面的话"></a>写在后面的话</h2><ul>
+<li>一些详细的描述都在代码中加了注释，本文主要是将流程和思路给梳理一下，建议阅读本文的时候，结合代码来看</li>
+<li>后面有时间的话会研究一下Nuxt，会同步到博客中</li>
+</ul>
 <h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p><a href="https://github.com/Johnson-hd/vue-ssr-master" target="_blank" rel="noopener">vue-ssr-master</a></p>
 
           
