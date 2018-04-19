@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="Johnson的博客">
 <meta property="og:description" content="关于我双子座男生来自山东烟台，现居上海web前端开发Github: https://github.com/Johnson-hd/QQ: 438513778 关于博客没事的时候会写点感悟和技术总结，也作为督促自己的一种方式 关于版权除特殊说明外，本博客内容皆为原创，可以自由转载，注明出处即可">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-19T06:08:09.000Z">
+<meta property="og:updated_time" content="2018-04-19T11:34:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Johnson的博客">
 <meta name="twitter:description" content="关于我双子座男生来自山东烟台，现居上海web前端开发Github: https://github.com/Johnson-hd/QQ: 438513778 关于博客没事的时候会写点感悟和技术总结，也作为督促自己的一种方式 关于版权除特殊说明外，本博客内容皆为原创，可以自由转载，注明出处即可">
@@ -270,6 +270,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
 
   
 
@@ -540,6 +547,43 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'Johnson-hd',
+            repo: 'gitment-comments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '96ce49facc4d205690dbe65a7eeba17d757e226d',
+            
+                client_id: 'b5864c70f355506049af'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
 
 
 
