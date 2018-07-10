@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="什么是SSRSSR是服务端渲染。现在的SPA应用，大多是定义一个根元素，然后动态加载js后，组装根元素，但这样会遇到几个问题：  无法SEO，根元素内容为空，爬虫无法爬到内容 首屏白屏，js加载完成后才会渲染出页面  而SSR就是为了解决这些问题，将首屏需要的页面和数据一起吐给浏览器，即利于SEO，又加速首屏渲染 项目结构1234567891011121314151617181920212223">
+<meta name="description" content="什么是SSRSSR是服务端渲染。现在的SPA应用，大多是定义一个根元素，然后动态加载js后，组装根元素，但这样会遇到几个问题：  无法SEO，根元素内容为空，爬虫无法爬到内容 首屏白屏，js加载完成后才会渲染出页面  而SSR就是为了解决这些问题，将首屏需要的页面和数据一起吐给浏览器，即利于SEO，又加速首屏渲染 说明一下：文档中的内容解释不是完整的，所有需要注意的点都在代码中做了注释，建议大家">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SSR初探">
-<meta property="og:url" content="https://johnson-hd.github.io/2018/04/16/ssr/ssr初探/index.html">
+<meta property="og:title" content="SSR">
+<meta property="og:url" content="https://johnson-hd.github.io/2018/05/16/ssr/ssr/index.html">
 <meta property="og:site_name" content="Johnson的博客">
-<meta property="og:description" content="什么是SSRSSR是服务端渲染。现在的SPA应用，大多是定义一个根元素，然后动态加载js后，组装根元素，但这样会遇到几个问题：  无法SEO，根元素内容为空，爬虫无法爬到内容 首屏白屏，js加载完成后才会渲染出页面  而SSR就是为了解决这些问题，将首屏需要的页面和数据一起吐给浏览器，即利于SEO，又加速首屏渲染 项目结构1234567891011121314151617181920212223">
+<meta property="og:description" content="什么是SSRSSR是服务端渲染。现在的SPA应用，大多是定义一个根元素，然后动态加载js后，组装根元素，但这样会遇到几个问题：  无法SEO，根元素内容为空，爬虫无法爬到内容 首屏白屏，js加载完成后才会渲染出页面  而SSR就是为了解决这些问题，将首屏需要的页面和数据一起吐给浏览器，即利于SEO，又加速首屏渲染 说明一下：文档中的内容解释不是完整的，所有需要注意的点都在代码中做了注释，建议大家">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-19T07:18:03.395Z">
+<meta property="og:updated_time" content="2018-07-10T11:46:07.962Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SSR初探">
-<meta name="twitter:description" content="什么是SSRSSR是服务端渲染。现在的SPA应用，大多是定义一个根元素，然后动态加载js后，组装根元素，但这样会遇到几个问题：  无法SEO，根元素内容为空，爬虫无法爬到内容 首屏白屏，js加载完成后才会渲染出页面  而SSR就是为了解决这些问题，将首屏需要的页面和数据一起吐给浏览器，即利于SEO，又加速首屏渲染 项目结构1234567891011121314151617181920212223">
+<meta name="twitter:title" content="SSR">
+<meta name="twitter:description" content="什么是SSRSSR是服务端渲染。现在的SPA应用，大多是定义一个根元素，然后动态加载js后，组装根元素，但这样会遇到几个问题：  无法SEO，根元素内容为空，爬虫无法爬到内容 首屏白屏，js加载完成后才会渲染出页面  而SSR就是为了解决这些问题，将首屏需要的页面和数据一起吐给浏览器，即利于SEO，又加速首屏渲染 说明一下：文档中的内容解释不是完整的，所有需要注意的点都在代码中做了注释，建议大家">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://johnson-hd.github.io/2018/04/16/ssr/ssr初探/"/>
+  <link rel="canonical" href="https://johnson-hd.github.io/2018/05/16/ssr/ssr/"/>
 
 
 
 
 
-  <title>SSR初探 | Johnson的博客</title>
+  <title>SSR | Johnson的博客</title>
   
 
 
@@ -231,7 +231,8 @@
 
 
 
- </div>
+
+      </div>
     </header>
 
     <main id="main" class="main">
@@ -254,7 +255,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://johnson-hd.github.io/2018/04/16/ssr/ssr初探/">
+    <link itemprop="mainEntityOfPage" href="https://johnson-hd.github.io/2018/05/16/ssr/ssr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Johnson">
@@ -271,7 +272,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SSR初探</h1>
+          <h1 class="post-title" itemprop="name headline">SSR</h1>
         
 
         <div class="post-meta">
@@ -283,8 +284,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-16T20:20:21+08:00">
-                2018-04-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-16T20:20:21+08:00">
+                2018-05-16
               </time>
             
 
@@ -302,8 +303,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/16/ssr/ssr初探/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/16/ssr/ssr初探/" itemprop="commentsCount"></span>
+                <a href="/2018/05/16/ssr/ssr/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/05/16/ssr/ssr/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -337,17 +338,24 @@
 <li>首屏白屏，js加载完成后才会渲染出页面</li>
 </ul>
 <p>而SSR就是为了解决这些问题，将首屏需要的页面和数据一起吐给浏览器，即利于SEO，又加速首屏渲染</p>
-<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── LICENSE</span><br><span class="line">├── README.md</span><br><span class="line">├── build</span><br><span class="line">│   ├── webpack.client.js --------------------------- client打包脚本</span><br><span class="line">│   └── webpack.server.js --------------------------- server打包脚本</span><br><span class="line">├── dist</span><br><span class="line">│   ├── bundle.client.js ---------------------------- client打包后脚本</span><br><span class="line">│   └── bundle.server.js ---------------------------- server打包后脚本</span><br><span class="line">├── package.json</span><br><span class="line">├── server.js --------------------------------------- server代码</span><br><span class="line">├── src --------------------------------------------- 前端代码</span><br><span class="line">│   ├── App.vue</span><br><span class="line">│   ├── app.js -------------------------------------- 生成vue实例</span><br><span class="line">│   ├── entry-client.js ----------------------------- client打包入口</span><br><span class="line">│   ├── entry-server.js ----------------------------- server打包入口</span><br><span class="line">│   ├── router -------------------------------------- 路由</span><br><span class="line">│   │   └── index.js</span><br><span class="line">│   ├── store --------------------------------------- vuex</span><br><span class="line">│   │   └── index.js</span><br><span class="line">│   └── views</span><br><span class="line">│       ├── about.vue</span><br><span class="line">│       ├── blog.vue</span><br><span class="line">│       └── home.vue</span><br><span class="line">│       └── user.vue</span><br><span class="line">└── yarn.lock</span><br></pre></td></tr></table></figure>
-<h2 id="思路整理"><a href="#思路整理" class="headerlink" title="思路整理"></a>思路整理</h2><ol>
-<li>发起请求</li>
-<li>server根据请求url，获取与此相关组件，找到组件中的 <code>asyncData</code> 拉取异步数据，数据获取完成后，<code>renderToString</code> 后返回给client，包含html和数据</li>
-<li>client拿到html，vue实例化，生成页面，拿到数据，进行页面的数据渲染</li>
+<font color="#DC143C">说明一下：文档中的内容解释不是完整的，所有需要注意的点都在代码中做了注释，建议大家参照代码来看</font>
+
+<h2 id="项目启动"><a href="#项目启动" class="headerlink" title="项目启动"></a>项目启动</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yarn install</span><br><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<p>或者使用pm2</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pm2 start pmlog.json</span><br></pre></td></tr></table></figure>
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">├── LICENSE</span><br><span class="line">├── README.md</span><br><span class="line">├── build</span><br><span class="line">│   ├── setup-dev-server.js ---------------------------------- 热加载服务器配置</span><br><span class="line">│   ├── webpack.base.config.js ------------------------------  webpack基础配置</span><br><span class="line">│   ├── webpack.client.config.js ----------------------------  client打包脚本</span><br><span class="line">│   └── webpack.server.config.js ----------------------------- server打包脚本</span><br><span class="line">├── dist ----------------------------------------------------- 打包后的脚本</span><br><span class="line">├── <span class="built_in">log</span> ------------------------------------------------------ 日志</span><br><span class="line">│   ├── err.log ---------------------------------------------- 错误日志</span><br><span class="line">│   └── out.log ---------------------------------------------- 输出日志</span><br><span class="line">├── package.json</span><br><span class="line">├── pmlog.json ----------------------------------------------- pm2配置文件</span><br><span class="line">├── server.js ------------------------------------------------ server</span><br><span class="line">├── src</span><br><span class="line">│   ├── App.vue</span><br><span class="line">│   ├── app.js</span><br><span class="line">│   ├── entry-client.js -------------------------------------- client打包入口</span><br><span class="line">│   ├── entry-server.js -------------------------------------- server打包入口</span><br><span class="line">│   ├── index.template.html ---------------------------------- html模板</span><br><span class="line">│   ├── router ----------------------------------------------- 路由</span><br><span class="line">│   ├── static ----------------------------------------------- 静态资源</span><br><span class="line">│   ├── store ------------------------------------------------ vuex</span><br><span class="line">│   └── views ------------------------------------------------ 页面</span><br><span class="line">└── yarn.lock</span><br></pre></td></tr></table></figure>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol>
+<li>报错 <code>render or template is not defind</code> ？<br>这个问题是由于 <code>vue-loader</code> 的版本引起的，网上查过一些资料，大部分是在 <code>webpack</code> 的 <code>alias</code> 中指定 <code>vue</code> 的引入，但是对我无效，我是通过降级到<br><code>v12</code>来解决的，需要注意的是，官方demo版本是 <code>v15</code> 需要在webpack配置中引入 <code>vue-loader</code> 插件</li>
+<li>为何 <code>asyncData</code> 不是放在 <code>created</code> 或者 <code>beforeCreate</code> 等生命周期来做？<br>首先，服务端渲染时能访问的生命周期只有 <code>created</code> 和 <code>beforeCreate</code> ，但是由于这2个周期在设计的时候即为同步，而对于服务端渲染，需要拿到数据之后再进行前端的渲染，<code>asyncData</code> 会返回 <code>promise</code> ，所以服务端会在执行 <code>asyncData</code> 后拿到回调继续做处理</li>
+<li>为什么需要 <code>store</code> ？<br>其实我们从返回的数据来看，页面结构和数据都已经有了，前端完全可以直接渲染，不需要存在 <code>store</code> 中，给人的感觉是多此一举，原因我分析了2点，一是返回的结果是一个 <code>html string</code> ，需要重新实例化，需要用到数据，二是返回的结果中包含的事件如果需要数据，我们也需要从<code>store</code> 中获取</li>
+<li>如果不是刷新页面（SSR），只是普通的路由跳转，应该如何处理？<br>服务端渲染会执行 <code>asyncData</code> 方法拉取数据存在 <code>store</code> 中，页面需要的数据一般我们都是通过计算属性拿到的，但是普通的路由切换，我们 <code>store</code> 中没有数据，所以计算属性中可能要判断是否 <code>store</code> 中有数据，为了避免重复的代码编写，在 <code>entry-client.js</code> 中会有路由的钩子函数来处理这些事情，即我们在路由切换之前先执行 <code>asyncData</code> 方法拉取数据存在 <code>store</code> 中</li>
+<li><code>pmlog.json</code> 文件中的注释在 <code>vscode</code> 编辑器中可能会报错，需要大家设置一下<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"files.associations"</span>: &#123;</span><br><span class="line">   <span class="string">"*.json"</span>: <span class="string">"jsonc"</span></span><br><span class="line"> &#125;,</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<h2 id="写在后面的话"><a href="#写在后面的话" class="headerlink" title="写在后面的话"></a>写在后面的话</h2><ul>
-<li>详细的描述都在代码中加了注释，本文主要是将思路梳理一下，建议阅读本文的时候，结合代码来看</li>
-<li>后面有时间的话会研究一下Nuxt，会同步到博客中</li>
+<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><ul>
+<li><a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" rel="noopener">官网demo</a></li>
+<li><a href="https://github.com/Johnson-hd/vue-ssr-master" target="_blank" rel="noopener">项目地址</a></li>
 </ul>
-<h2 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h2><p><a href="https://github.com/Johnson-hd/vue-ssr-master" target="_blank" rel="noopener">vue-ssr-master</a><br><a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" rel="noopener">官网demo</a></p>
 <h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
 <li><a href="https://juejin.im/entry/5a56c944518825734d1485bc" target="_blank" rel="noopener">https://juejin.im/entry/5a56c944518825734d1485bc</a></li>
 </ul>
@@ -375,7 +383,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/13/vue/typescript/" rel="next" title="Vue集成Typescript">
+              <a href="/2018/03/13/vue/typescript/" rel="next" title="Vue集成Typescript">
                 <i class="fa fa-chevron-left"></i> Vue集成Typescript
               </a>
             
@@ -554,7 +562,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是SSR"><span class="nav-number">1.</span> <span class="nav-text">什么是SSR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目结构"><span class="nav-number">2.</span> <span class="nav-text">项目结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路整理"><span class="nav-number">3.</span> <span class="nav-text">思路整理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写在后面的话"><span class="nav-number">4.</span> <span class="nav-text">写在后面的话</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github"><span class="nav-number">5.</span> <span class="nav-text">Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是SSR"><span class="nav-number">1.</span> <span class="nav-text">什么是SSR</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目启动"><span class="nav-number">2.</span> <span class="nav-text">项目启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目结构"><span class="nav-number">3.</span> <span class="nav-text">项目结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">4.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github"><span class="nav-number">5.</span> <span class="nav-text">Github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
@@ -799,6 +807,7 @@
   
 
   
+
 
 </body>
 </html>
